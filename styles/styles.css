@@ -1,0 +1,175 @@
+@charset "utf-8";
+
+/* Box Sizing Reset */
+html {
+  box-sizing: border-box;
+}
+*, *:before, *:after {
+  box-sizing: inherit;
+}
+
+body {
+  margin: 0;
+  padding: 0;
+  display: grid;
+  grid-template: 1fr 3.5rem / 1fr;
+  grid-template-areas: 
+      "main"
+      "footer";
+  width: 100%;
+  min-height: 100vh;
+  background: linear-gradient(
+    to top,
+    rgb(210, 255, 255),
+    rgb(77, 216, 247)
+  );
+}
+
+main {
+  grid-area: main;
+  margin: auto;
+  padding-top: 1rem;
+}
+
+.form-container {
+  padding: 2rem;
+  box-shadow: 0 0 2rem 0 grey
+            , 0.5rem 0.5rem 0.5rem 0rem black;
+  background-color: white;
+  border-radius: 15px;
+  max-width: 480px;
+}
+
+.title {
+  margin: 0;
+  padding: 0;
+  border-bottom: 3px solid darkblue;
+  display: inline-flex;
+  box-shadow: 0px 3px 6px -5px darkblue;
+}
+
+.title > h2 {
+  color: darkblue;
+  margin: 0.2rem 0;
+  text-shadow: 0px 0px 3px gray;
+}
+
+fieldset {
+  border: none;
+  border-top: 2px solid black;
+  display: flex;
+  flex-direction: column;
+  padding: 0;
+  margin-top: 2.5rem;
+}
+
+legend {
+  margin-left: 2rem;
+  font-weight: bold;
+  padding-right: 0.5rem;
+  font-size: larger;
+}
+
+.legend-circle {
+  border-radius: 50%;
+  padding: 0.5rem;
+  width: 1.6rem;
+  height: 1.6rem;
+  display: inline-flex;
+  justify-content: center;
+  align-items: center;
+  background-color: #00b300;
+  color: white;
+  margin: 0 0.5rem;
+  font-size: small;
+}
+
+fieldset > label {
+  margin-top: 0.65rem;
+}
+
+fieldset > input {
+  border: none;
+  background-color:  #f2f2f2;
+  padding: 0.4rem 1rem;
+  border-radius: 3px;
+  color: grey;
+  font-weight: bold;
+}
+
+fieldset > select {
+  background-color:  #f2f2f2;
+}
+
+fieldset > input:focus, select:focus {
+  outline: 3px solid #00b300;
+}
+
+.horizontal-options {
+  display: flex;
+}
+
+.horizontal-options > label {
+  margin-right: 1rem;
+}
+
+
+.buttons-container {
+  display: flex;
+  flex-direction: column;
+}
+
+.buttons-container > button:nth-child(1) {
+  margin-top: 1rem;
+  background-color: #00b300;
+  border: none;
+  border-radius: 0.5rem;
+  padding: 0.5rem;
+}
+
+.buttons-container > button:nth-child(2) {
+  margin-top: 1rem;
+  background-color: transparent;
+  border: 1px solid gray;
+  border-radius: 0.5rem;
+  padding: 0.5rem;
+}
+
+.hidden {
+  display: none;
+  flex-direction: column;
+}
+
+.hidden > label {
+  margin-top: 0.65rem;
+}
+
+.hidden > input {
+  border: none;
+  background-color:  #f2f2f2;
+  padding: 0.4rem 1rem;
+  border-radius: 3px;
+  color: grey;
+  font-weight: bold;
+}
+
+.hidden > input:focus {
+  outline: 3px solid #00b300;
+}
+
+textarea {
+  background-color:  #f2f2f2;
+}
+
+textarea:focus {
+  outline: 3px solid #00b300;
+}
+
+footer {
+  grid-area: footer;
+  padding-right: 2rem;
+  display: flex;
+  justify-content: flex-end;
+  align-items: center;
+  font-family: 'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif;
+}
