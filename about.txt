@@ -2,7 +2,7 @@ Following the exercises direction of creating branchs.
 
 The current one is for reviewing and adding more features.
 
-I already have done those previously, but even though the branchs are created to follow the workflow.
+I have already done those previously (phase1 and phase2 branchs), but even though the branchs are created to follow the workflow.
 
 Next step, Merge sunset-theme and form-revisions into main (master in my case).
 
