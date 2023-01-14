@@ -15,6 +15,12 @@ const comments = document.getElementById("comments");
 const hidden = document.getElementById("hidden");
 const btClear = document.getElementById("bt-clear-form");
 
+const git = document.getElementById("git");
+const gulp = document.getElementById("gulp");
+const webpack = document.getElementById("webpack");
+const sass = document.getElementById("sass");
+const python = document.getElementById("python");
+
 
 btClear && btClear.addEventListener("click", e => {
     e.preventDefault();
@@ -32,6 +38,12 @@ btClear && btClear.addEventListener("click", e => {
     comments.value = "";
     hidden.style.display = "none";
     name.focus();
+
+    git.checked = false;
+    gulp.checked = false;
+    webpack.checked = false;
+    sass.checked = false;
+    python.checked = false;
 });
 
 

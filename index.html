@@ -4,10 +4,17 @@
     <meta charset="UTF-8" />
     <title>Sign Up Form</title>
     <meta name="viewport" content="width=device-width, initial-scale=1" />
-    <link
+    <!-- <link
       href="https://fonts.googleapis.com/css2?family=Josefin+Slab:wght@100;300;400;600;700&display=swap"
       rel="stylesheet"
-    />
+    /> -->
+
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Roboto+Slab:wght@100;200;300;400;500;600;700;800;900&family=Roboto:wght@300;500;700;900&display=swap" rel="stylesheet">
+
+
+
     <link rel="stylesheet" href="styles/styles.css" />
   </head>
   <body>
@@ -23,12 +30,15 @@
               <span class="legend-circle"> 1 </span>
               Account Info
             </legend>
-            <label class="items" for="name">Name</label>
-            <input class="items" type="text" name="name" id="name" required autofocus>
-            <label class="items" for="email">Email</label>
-            <input class="items" type="email" name="email" id="email" required>
-            <label class="items" for="password">Password</label>
-            <input class="items" type="password" name="password" id="password" required>
+            <label class="visually-hidden" for="name">Name</label>
+            <input type="text" name="name" id="name" placeholder="Full Name" 
+                   required title="Type your full name." aria-label="Type your full name." autofocus>
+            <label class="items visually-hidden" for="email">Email</label>
+            <input type="email" name="email" id="email" placeholder="Email address" 
+                   required title="Your email, please." aria-label="Your email, please.">
+            <label class="items visually-hidden" for="password">Password</label>
+            <input type="password" name="password" id="password" placeholder="Password - min 8 chars" 
+                   required title="Password with at least 8 characters." aria-label="Password with at least 8 characters.">
           </fieldset>
 
           <fieldset>
@@ -36,16 +46,48 @@
               <span class="legend-circle"> 2 </span>
                 Dev Skills
             </legend>
-            <p>Programming Languages</p>
-            <div class="horizontal-options">
-              <input type="checkbox" name="html" value="html" id="html">
-              <label for="name">HTML</label>
-              <input type="checkbox" name="css" value="css" id="css">
-              <label for="name">CSS</label>
-              <input type="checkbox" name="javascript" value="javascript" id="javascript">
-              <label for="name">Javascript</label>
-              <input type="checkbox" name="php" value="php" id="php">
-              <label for="name">PHP</label>
+            <p class="subsetions-title">Programming Languages</p>
+            <div class="options-container">
+              <div>
+                <input type="checkbox" name="html" value="html" id="html">
+                <label for="html">HTML</label>
+              </div>
+              <div>
+                <input type="checkbox" name="css" value="css" id="css">
+                <label for="css">CSS</label>
+              </div>
+              <div>
+                <input type="checkbox" name="sass" value="sass" id="sass">
+                <label for="sass">Sass</label>
+              </div>
+              <div>
+                <input type="checkbox" name="javascript" value="javascript" id="javascript">
+                <label for="javascript">Javascript</label>
+              </div>
+              <div>
+                <input type="checkbox" name="php" value="php" id="php">
+                <label for="php">PHP</label>
+              </div>
+              <div>
+                <input type="checkbox" name="python" value="python" id="python">
+                <label for="python">Python</label>
+              </div>
+            </div>
+
+            <p class="subsetions-title">Dev Ops</p>
+            <div class="options-container">
+              <div>
+                <input type="checkbox" name="git" value="git" id="git">
+                <label for="git">GIT</label>
+              </div>
+              <div>
+                <input type="checkbox" name="gulp" value="gulp" id="gulp">
+                <label for="gulp">Gulp</label>
+              </div>
+              <div>
+                <input type="checkbox" name="webpack" value="webpack" id="webpack">
+                <label for="webpack">Webpack</label>
+              </div>
             </div>
           </fieldset>
 
@@ -54,8 +96,7 @@
               <span class="legend-circle"> 3 </span>
                 Experience
             </legend>
-            <p>Overall Experience</p>
-            <div class="horizontal-options">
+            <div class="horizontal-options experience-section">
               <input type="radio" name="experience" id="beginner" value="beginner" id="beginner">
               <label for="name">Beginner</label>
               <input type="radio" name="experience" id="intermediate" value="intermediate" id="intermediate">
@@ -95,13 +136,22 @@
               <input type="text" name="details" id="details" placeholder="Do tell!">
             </div>
 
-            <p>Comments</p>
+            <label for="comments">Comments</label>
             <textarea name="comments" id="comments" rows="6"></textarea>
           </fieldset>
 
           <div class="buttons-container">
-            <button id="bt-submit">Submit</button>
-            <button id="bt-clear-form">Clear Form</button>
+            <button class="bt-style" id="bt-submit">Submit</button>
+            <!-- could also use the option below -->
+            <!-- keeping both ways for documentation purposes -->
+            <!-- <input type="submit" class="bt-style" id="bt-submit" value="Submit"> -->
+
+            <!-- the option below clears the form programatically by js script -->
+            <button class="bt-style" id="bt-clear-form">Clear Form</button>
+
+            <!-- another option - it clears the form automatically -->
+            <!-- keeping both ways for documentation purposes -->
+            <!-- <input type="reset" class="bt-style" id="bt-clear-form" value="Clear Form"> -->
           </div>
         </form>
       </main>
@@ -110,8 +160,10 @@
       <p>&copy; Tony Kieling — 2023</p>
     </footer>
     <script src="/script/script.js"></script>
-    <!--  
+  </body>
+</html>
 
+<!--  
 *** Form should have a max-width of
 480px and should be centred along
 the left / right axis within the
@@ -135,5 +187,3 @@ Other
   Magic!
   Other...
 -->
-  </body>
-</html>
