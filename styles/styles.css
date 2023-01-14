@@ -3,6 +3,9 @@
 /* Box Sizing Reset */
 html {
   box-sizing: border-box;
+  font-family: 'Roboto Slab', Arial, Helvetica, sans-serif;
+  /* arial, helvetiv and san-serif just in case */
+  scroll-behavior: smooth;
 }
 *, *:before, *:after {
   box-sizing: inherit;
@@ -20,8 +23,8 @@ body {
   min-height: 100vh;
   background: linear-gradient(
     to top,
-    rgb(210, 255, 255),
-    rgb(77, 216, 247)
+    #FF5733,
+    #FFC300
   );
 }
 
@@ -31,13 +34,16 @@ main {
   padding-top: 1rem;
 }
 
+
+
+/*** form section ***/
 .form-container {
+  max-width: 480px;
   padding: 2rem;
   box-shadow: 0 0 2rem 0 grey
             , 0.5rem 0.5rem 0.5rem 0rem black;
   background-color: white;
   border-radius: 15px;
-  max-width: 480px;
 }
 
 .title {
@@ -54,6 +60,9 @@ main {
   text-shadow: 0px 0px 3px gray;
 }
 
+
+
+/*** general ***/
 fieldset {
   border: none;
   border-top: 2px solid black;
@@ -70,6 +79,9 @@ legend {
   font-size: larger;
 }
 
+
+
+/*** account info, dev skills and experience sections ***/
 .legend-circle {
   border-radius: 50%;
   padding: 0.5rem;
@@ -78,7 +90,7 @@ legend {
   display: inline-flex;
   justify-content: center;
   align-items: center;
-  background-color: #00b300;
+  background-color: darkblue;
   color: white;
   margin: 0 0.5rem;
   font-size: small;
@@ -86,6 +98,22 @@ legend {
 
 fieldset > label {
   margin-top: 0.65rem;
+}
+
+fieldset > .visually-hidden {
+  position: absolute !important;
+  width: 1px !important;
+  height: 1px !important;
+  padding: 0 !important;
+  margin: -1px !important;
+  overflow: hidden !important;
+  clip: rect(0, 0, 0, 0) !important;
+  white-space: nowrap !important;
+  border: 0 !important;
+}
+
+fieldset > input {
+  margin-top: 0.5rem;
 }
 
 fieldset > input {
@@ -102,7 +130,8 @@ fieldset > select {
 }
 
 fieldset > input:focus, select:focus {
-  outline: 3px solid #00b300;
+  outline: 3px solid #FFC300;
+  background-color: white;
 }
 
 .horizontal-options {
@@ -113,28 +142,21 @@ fieldset > input:focus, select:focus {
   margin-right: 1rem;
 }
 
-
-.buttons-container {
-  display: flex;
-  flex-direction: column;
+.options-container {
+  display: grid;
+  grid-template-columns: 1fr 1fr 1fr;
 }
 
-.buttons-container > button:nth-child(1) {
+.subsetions-title {
+  font-weight: bold;
+}
+
+.experience-section {
   margin-top: 1rem;
-  background-color: #00b300;
-  border: none;
-  border-radius: 0.5rem;
-  padding: 0.5rem;
 }
 
-.buttons-container > button:nth-child(2) {
-  margin-top: 1rem;
-  background-color: transparent;
-  border: 1px solid gray;
-  border-radius: 0.5rem;
-  padding: 0.5rem;
-}
 
+/*** others section ***/
 .hidden {
   display: none;
   flex-direction: column;
@@ -154,7 +176,8 @@ fieldset > input:focus, select:focus {
 }
 
 .hidden > input:focus {
-  outline: 3px solid #00b300;
+  outline: 3px solid #FFC300;
+  background-color: white;
 }
 
 textarea {
@@ -162,9 +185,46 @@ textarea {
 }
 
 textarea:focus {
-  outline: 3px solid #00b300;
+  outline: 3px solid #FFC300;
+  background-color: white;
 }
 
+
+
+/*** buttons section ***/
+.buttons-container {
+  display: flex;
+  flex-direction: column;
+  font-family: 'Roboto Slab', Arial, Helvetica, sans-serif;
+}
+
+.bt-style {
+  font-family: 'Roboto Slab', Arial, Helvetica, sans-serif;
+}
+
+.buttons-container > :nth-child(1) {
+  margin-top: 1rem;
+  background-color: darkblue;
+  color: white;
+  font-weight: bold;
+  border: none;
+  border-radius: 0.5rem;
+  padding: 0.5rem;
+}
+
+.buttons-container > :nth-child(2) {
+  margin-top: 1rem;
+  background-color: transparent;
+  border: 1px solid gray;
+  border-radius: 0.5rem;
+  padding: 0.5rem;
+  color: #FF5733;
+  font-weight: bold;
+}
+
+
+
+/*** footer ***/
 footer {
   grid-area: footer;
   padding-right: 2rem;
@@ -173,3 +233,4 @@ footer {
   align-items: center;
   font-family: 'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif;
 }
+
