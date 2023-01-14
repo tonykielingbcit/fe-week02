@@ -16,6 +16,7 @@ const hidden = document.getElementById("hidden");
 const btClear = document.getElementById("bt-clear-form");
 
 
+// it clears the form programatically
 btClear && btClear.addEventListener("click", e => {
     e.preventDefault();
     name.value = "";
