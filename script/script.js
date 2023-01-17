@@ -48,7 +48,9 @@ btClear && btClear.addEventListener("click", e => {
 
 
 reference && reference.addEventListener("click", e => {
-    if (reference.selectedIndex === 8 || reference.selectedIndex === 9)
+    //different way to get the menu option
+    // if (reference.selectedIndex === 8 || reference.selectedIndex === 9)
+    if (reference.value === "magic" || reference.value === "other")
         hidden.style.display = "flex";
     else
         hidden.style.display = "none";
